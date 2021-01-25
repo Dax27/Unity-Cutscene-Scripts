@@ -1,0 +1,56 @@
+//This script uses keys set up in the input manager to switch between multiple cameras in a Unity scene. These are public and cameras can be dragged and dropped in.
+//Whichever cameras are active or inactive is updated per a frame and can be controlled with key strokes.
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CameraSwitch : MonoBehaviour
+{
+  //This creates the public gameobjects for the camera set up. This script should be linked to an empty in Unity.
+    public GameObject cam1;
+    public GameObject cam2;
+    public GameObject cam3;
+    public GameObject cam4;
+
+
+    //If a key is pressed, make the camera related to that key switch on and the others switch off.
+    
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetButtonDown("1Key"))
+        {
+            cam1.SetActive(true);
+            cam2.SetActive(false);
+            cam3.SetActive(false);
+            cam4.SetActive(false);
+        }
+
+        if (Input.GetButtonDown("2Key"))
+        {
+            cam1.SetActive(false);
+            cam2.SetActive(true);
+            cam3.SetActive(false);
+            cam4.SetActive(false);
+        }
+
+        if (Input.GetButtonDown("3Key"))
+        {
+            cam1.SetActive(false);
+            cam2.SetActive(false);
+            cam3.SetActive(true);
+            cam4.SetActive(false);
+        }
+
+        if (Input.GetButtonDown("4Key"))
+        {
+            cam1.SetActive(false);
+            cam2.SetActive(false);
+            cam3.SetActive(false);
+            cam4.SetActive(true);
+        }
+    }
+}
+
+//end of C# code.
